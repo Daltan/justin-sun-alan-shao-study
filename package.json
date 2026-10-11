@@ -1,0 +1,16 @@
+{
+  "name": "ai-podcast-study",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "bun app/build.ts",
+    "start": "bun app/server.ts",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.2",
+    "happy-dom": "^20.14.6",
+    "typescript": "^7.0.2"
+  }
+}

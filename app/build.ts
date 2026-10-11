@@ -1,0 +1,10 @@
+import {insights,chapters} from './content';
+const transcript=await Bun.file('全文.md').text();
+const sections=transcript.split(/^## /m).slice(1).map((b)=>({title:b.split('\n')[0],text:b.slice(b.indexOf('\n')).trim()}));
+const result=await Bun.build({entrypoints:['app/main.ts'],target:'browser',minify:true});
+if(!result.success) throw new Error(result.logs.join('\n'));
+const script=await result.outputs[0].text();
+const style=await Bun.file('app/style.css').text();
+const data=JSON.stringify({insights,chapters,sections}).replaceAll('<','\\u003c');
+await Bun.write('index.html',`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f2e9"><title>开图 · AI 时代学习手册</title><style>${style}</style></head><body><div id="app"></div><script id="study-data" type="application/json">${data}</script><script>${script.replaceAll('</script','<\\/script')}</script></body></html>`);
+console.log(`Built index.html: ${insights.length} flashcards, ${insights.length} MCQs, ${insights.filter((_,i)=>i%2===0).length} written questions, ${sections.length} transcript sections.`);
