@@ -8,6 +8,8 @@
 
 ## 开始学习
 
+在线使用：https://daltan.github.io/justin-sun-alan-shao-study/
+
 **最快方式：** 在仓库选择 Code → Download ZIP，解压后用浏览器打开 `index.html`。GitHub 文件预览只显示代码，不运行网页。
 
 也可以克隆仓库，使用 Bun 启动本地网页：
@@ -65,8 +67,6 @@ bun x tsc --noEmit
 已通过 10 个自动化功能测试与 TypeScript 检查，验证 57 道题均有逐字稿时间点。2026-10-12 已通过实际浏览器查看学习地图、闪卡、选择题和主观题，并保存桌面截图。移动布局尚未单独验收。
 
 仓库：https://github.com/Daltan/justin-sun-alan-shao-study
-
-当前未启用 GitHub Pages；使用网页请下载打开或启动本地服务。
 
 
 应用源码采用仓库创建时指定的 MIT 许可证（`LICENSE`）。上游笔记材料的 CC BY 4.0 授权和访谈版权声明保存在 `LICENSE.upstream`；MIT 不覆盖第三方访谈与逐字稿。
